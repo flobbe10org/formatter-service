@@ -1,0 +1,422 @@
+{
+  "title": "Qualifikationsprofil",
+  "sections": [
+    {
+      "title": "Max Mustermann",
+      "identifier": "07b1710e-7d07-11ed-a1eb-0242ac120002",
+      "elements": [
+        {
+          "key": "Softwareenwickler",
+          "value": "mit Schwerpunkt auf Backend",
+          "type": "string",
+          "identifier": "07b1867e-7d07-11ed-a1eb-0242ac120002",
+          "required": true, 
+          "unique": true
+        }
+      ],
+      "showTitle": true,
+      "styleTitle": {
+        "fontFamily": "Tahoma",
+        "fontSize": 16,
+        "color": "000000",
+        "bold": false,
+        "italic": false,
+        "textAlign": "CENTER",
+        "separator": {
+          "value": "LINE_BREAK",
+          "category": "BEHIND"
+        },
+        "startOnNewPage": false
+      },
+      "styleKey": {
+        "fontFamily": "Tahoma",
+        "fontSize": 12,
+        "color": "000000",
+        "bold": true,
+        "italic": false,
+        "textAlign": "CENTER",
+        "separator": {
+          "value": "SPACE",
+          "category": "BEHIND"
+        }
+      },
+      "styleValue": {
+        "fontFamily": "Tahoma",
+        "fontSize": 12,
+        "color": "000000",
+        "bold": false,
+        "italic": false,
+        "textAlign": "CENTER",
+        "separator": {
+          "value": "COMMA",
+          "category": "BEHIND"
+      }
+      }
+    },
+    {
+      "title": "Allgemeine Angaben",
+      "identifier": "07b1719e-7d07-11ed-a1eb-0242ac120002",
+      "elements": [
+        {
+          "key": "Sprachen:",
+          "value": ["dolor", "sit amet", "consetetur",
+          "sadipscing", "nonumy", "tempor", "invidunt"],
+          "type": "stringList",
+          "identifier": "07b1877e-7d07-11ed-a1eb-0242ac120002",
+          "required": true, 
+          "unique": true
+        },
+        {
+          "key": "Date Range:",
+          "value": {
+            "from": "2023-01-13",
+            "to": "2022-10-30"
+          },
+          "type": "dateRange",
+          "identifier": "07b189fe-7d07-11ed-a1eb-0242ac120002",
+          "required": true, 
+          "unique": true
+        },
+        {
+          "key": "Einsatzbereich:",
+          "value": "Lorem ipsum",
+          "type": "string",
+          "identifier": "07b18b8e-7d07-11ed-a1eb-0242ac120002",
+          "required": true, 
+          "unique": true
+        },
+        {
+          "key": "Verfügbarkeit:",
+          "value": "2023-01-16",
+          "type": "date",
+          "identifier": "07b18ce2-7d07-11ed-a1eb-0242ac120002",
+          "required": true, 
+          "unique": true
+        }
+      ],
+      "showTitle": true,
+      "styleTitle": {
+        "fontFamily": "Tahoma",
+        "fontSize": 14,
+        "color": "C45911",
+        "bold": false,
+        "italic": false,
+        "textAlign": "LEFT",
+        "separator": {
+          "value": "LINE_BREAK",
+          "category": "BEHIND"
+        },
+        "startOnNewPage": false
+      },
+      "styleKey": {
+        "fontFamily": "Tahoma",
+        "fontSize": 11,
+        "color": "000000",
+        "bold": false,
+        "italic": false,
+        "textAlign": "LEFT",
+        "separator": {
+          "value": "INDENT",
+          "category": "BEHIND"
+        }
+      },
+      "styleValue": {
+        "fontFamily": "Tahoma",
+        "fontSize": 11,
+        "color": "000000",
+        "bold": false,
+        "italic": false,
+        "textAlign": "LEFT",
+        "separator": {
+          "value": "COMMA",
+          "category": "BEHIND"
+        }
+      }
+    },
+    {
+      "title": "Kernkompetenzen",
+      "identifier": "07b17446-7d07-11ed-a1eb-0242ac120002",
+      "elements": [
+        {
+          "key": "Programmiersprachen:",
+          "value": ["dolor", "sit amet", "consetetur",
+          "sadipscing", "nonumy", "tempor", "invidunt"],
+          "type": "stringList",
+          "identifier": "07b18e9a-7d07-11ed-a1eb-0242ac120002",
+          "required": true, 
+          "unique": true
+        },
+        {
+          "key": "Tools:",
+          "value": ["dolor", "sit amet", "consetetur",
+          "sadipscing", "nonumy", "tempor", "invidunt"],
+          "type": "stringList",
+          "identifier": "07b19052-7d07-11ed-a1eb-0242ac120002",
+          "required": true, 
+          "unique": true
+        },
+        {
+          "key": "Frameworks:",
+          "value": ["dolor", "sit amet", "consetetur",
+          "sadipscing", "nonumy", "tempor", "invidunt"],
+          "type": "stringList",
+          "identifier": "07b1a0a6-7d07-11ed-a1eb-0242ac120002",
+          "required": true, 
+          "unique": true
+        },
+        {
+          "key": "Datenbanken:",
+          "value": ["dolor", "sit amet", "consetetur",
+          "sadipscing", "nonumy", "tempor", "invidunt"],
+          "type": "stringList",
+          "identifier": "07b1a204-7d07-11ed-a1eb-0242ac120002",
+          "required": true, 
+          "unique": true
+        },
+        {
+          "key": "Betriebssysteme:",
+          "value": ["dolor", "sit amet", "consetetur",
+          "sadipscing", "nonumy", "tempor", "invidunt"],
+          "type": "stringList",
+          "identifier": "07b1a312-7d07-11ed-a1eb-0242ac120002",
+          "required": true, 
+          "unique": true
+        }
+      ],
+      "showTitle": true,
+      "styleTitle": {
+        "fontFamily": "Tahoma",
+        "fontSize": 14,
+        "color": "C45911",
+        "bold": false,
+        "italic": false,
+        "textAlign": "LEFT",
+        "separator": {
+          "value": "LINE_BREAK",
+          "category": "BEHIND"
+        },
+        "startOnNewPage": false
+      },
+      "styleKey": {
+        "fontFamily": "Tahoma",
+        "fontSize": 11,
+        "color": "000000",
+        "bold": false,
+        "italic": false,
+        "textAlign": "LEFT",
+        "separator": {
+          "value": "INDENT",
+          "category": "BEHIND"
+        }
+      },
+      "styleValue": {
+        "fontFamily": "Tahoma",
+        "fontSize": 11,
+        "color": "000000",
+        "bold": false,
+        "italic": false,
+        "textAlign": "LEFT",
+        "separator": {
+          "value": "COMMA",
+          "category": "BEHIND"
+        }
+      }
+    },
+    {
+      "title": "Projekterfahrung",
+      "identifier": "07b17590-7d07-11ed-a1eb-0242ac120002",
+      "elements": [
+        {
+          "key": "seit 12/2022",
+          "value": "Softwareenwickler als Werkstudent",
+          "type": "string", 
+          "required": true,
+          "unique": true,
+          "styleKey": {
+            "fontFamily": "Tahoma",
+            "fontSize": 12,
+            "color": "000000",
+            "bold": false,
+            "italic": false,
+            "textAlign": "LEFT",
+            "separator": {
+              "value": "INDENT",
+              "category": "BEHIND"
+            }
+          },
+          "styleValue": {
+            "fontFamily": "Tahoma",
+            "fontSize": 12,
+            "color": "000000",
+            "bold": true,
+            "italic": false,
+            "textAlign": "LEFT"
+          }
+        },
+        {
+          "key": {
+            "key": "IT",
+            "value": "Job Beschreibung",
+            "identifier": "07b1a420-7d07-11ed-a1eb-0242ac120002",
+            "type": "string",
+            "required": true, 
+            "unique": true,
+            "styleKey": {
+              "fontFamily": "Tahoma",
+              "fontSize": 11,
+              "color": "000000",
+              "bold": false,
+              "italic": true,
+              "textAlign": "LEFT",
+              "separator": {
+                "value": "INDENT",
+                "category": "BEHIND"
+              }
+            }
+          },
+          "value": [
+          {
+            "key": "Aufgaben",
+            "value": ["Planung", "Alles mögliche", "Dies das"],
+            "identifier": "07b1a83a-7d07-11ed-a1eb-0242ac120002",
+            "type": "stringList",
+            "required": true, 
+            "unique": true
+          },
+          {
+            "key": "Methoden / Technologien",
+            "identifier": "07b1b758-7d07-11ed-a1eb-0242ac120002",
+            "value": ["dolor", "sit amet", "consetetur", "sadipscing", "nonumy", "tempor", "invidunt"],
+            "type": "stringList",
+            "required": true, 
+            "unique": true,
+            "styleValue": {
+              "fontFamily": "Tahoma",
+              "fontSize": 11,
+              "color": "7F7F7F",
+              "bold": false,
+              "italic": false,
+              "textAlign": "LEFT",
+              "separator": {
+                "value": "COMMA",
+                "category": "BEHIND"
+              }
+            }
+          }
+          ],
+          "type": "nested",
+          "identifier": "07b1b906-7d07-11ed-a1eb-0242ac120002",
+          "required": true, 
+          "unique": true,
+          "styleKey": {
+            "fontFamily": "Tahoma",
+            "fontSize": 11,
+            "color": "C45911",
+            "bold": false,
+            "italic": false,
+            "textAlign": "LEFT",
+            "separator": {
+              "value": "LINE_BREAK",
+              "category": "BEHIND"
+            }
+          },
+          "styleValue": {
+            "fontFamily": "Tahoma",
+            "fontSize": 11,
+            "color": "7F7F7F",
+            "bold": false,
+            "italic": false,
+            "textAlign": "LEFT",
+            "separator": {
+              "value": "BULLETPOINT",
+              "category": "IN_FRONT"
+            }
+          }
+        }
+      ],
+      "showTitle": true,
+      "styleTitle": {
+        "fontFamily": "Tahoma",
+        "fontSize": 14,
+        "color": "C45911",
+        "bold": false,
+        "italic": false,
+        "textAlign": "LEFT",
+        "separator": {
+          "value": "LINE_BREAK",
+          "category": "BEHIND"
+        },
+        "startOnNewPage": true
+      },
+      "styleKey": {
+        "fontFamily": "Tahoma",
+        "fontSize": 11,
+        "color": "000000",
+        "bold": false,
+        "italic": false,
+        "textAlign": "LEFT",
+        "separator": {
+          "value": "INDENT",
+          "category": "BEHIND"
+        }
+      },
+      "styleValue": {
+        "fontFamily": "Tahoma",
+        "fontSize": 11,
+        "color": "7F7F7F",
+        "bold": false,
+        "italic": false,
+        "textAlign": "LEFT",
+        "separator": {
+          "value": "LINE_BREAK",
+          "category": "BEHIND"
+        }
+      }
+    }
+  ],
+  "header": {
+  "logo": "./inputResources/TecFox_Logo.png"
+  },
+  "footer": {
+  "leftSection": [
+      "TecFox GmbH",
+      "Hohetorwall 14",
+      "38118 Braunschweig"
+  ],
+  "middleSection": [
+      "Geschäftsführung",
+      "Birgit Prokopp, AnhalOsamn",
+      "Handelsregister: Braunschweig HRB 209380",
+      "USt-IdNr. DE344726378"
+  ],
+  "rightSection": [
+      "Volksbank Braunschweig Wolfsburg",
+      "IBAN: DE45 2699 1066 1468 4640 00",
+      "BIC: GENODEF1WOB"
+  ],
+  "style": {
+      "fontFamily": "Tahoma",
+      "fontSize": 9,
+      "color": "7F7F7F",
+      "bold": false,
+      "italic": false,
+      "textAlign": "LEFT",
+      "separator": {
+        "value": "TAB",
+        "category": "BEHIND"
+      }
+  }
+  },
+  "style": {
+    "fontFamily": "Tahoma",
+    "fontSize": 22,
+    "color": "C45911",
+    "bold": false,
+    "italic": false,
+    "textAlign": "CENTER",
+    "separator": {
+      "value": "LINE_BREAK",
+      "category": "BEHIND"
+    }
+  }
+}

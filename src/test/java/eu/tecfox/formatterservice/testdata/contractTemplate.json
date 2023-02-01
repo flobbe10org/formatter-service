@@ -1,0 +1,163 @@
+{
+    "title": "Arbeitsvertrag",
+    "sections": [
+      {
+        "title": "",
+        "elements": [
+            {
+                "key": "zwischen",
+                "value": "",
+                "type": "string"
+            },
+            {
+                "key": "",
+                "value": "",
+                "type": "string"
+            },
+            {
+                "key": "",
+                "value": ["Herrn", "FlorinSchikarski", "Eisebüttelerstr. 21", "38122 Braunschweig"],
+                "type": "stringList"
+            },
+            {
+                "key": "",
+                "value": "",
+                "type": "string"
+            },
+            {
+                "key": "",
+                "value": "",
+                "type": "string"
+            },
+            {
+                "key": "",
+                "value": "",
+                "type": "string"
+            },
+            {
+                "key": "",
+                "value": "",
+                "type": "string"
+            },
+            {
+                "key": "- nachfolgend \"Mitarbeiter\" genannt -",
+                "value": "",
+                "type": "string"
+            },
+            {
+                "key": "und der",
+                "value": "",
+                "type": "string"
+            },
+            {
+                "key": "",
+                "value": "",
+                "type": "string"
+            },
+            {
+                "key": "",
+                "value": ["TecFox GmbH", "Hohetorwall 14", "38118 Braunschweig"],
+                "type": "stringList"
+            },
+            {
+                "key": "",
+                "value": "vertreten durch",
+                "type": "string"
+            },
+            {
+                "key": "",
+                "value": "Frau Birgit Prokopp, Herrn Anhal Osman",
+                "type": "string"
+            },
+            {
+                "key": "- nachfolgend \"Gesellschaft\" genannt -",
+                "value": "",
+                "type": "string"
+            }
+        ],
+        "showTitle": true,
+        "styleTitle": {
+          "fontFamily": "Tahoma",
+          "fontSize": 16,
+          "color": "000000",
+          "bold": false,
+          "italic": false,
+          "textAlign": "CENTER",
+          "separator": {
+            "value": "LINE_BREAK",
+            "category": "BEHIND"
+          },
+          "startOnNewPage": false
+        },
+        "styleKey": {
+          "fontFamily": "Tahoma",
+          "fontSize": 12,
+          "color": "000000",
+          "bold": false,
+          "italic": false,
+          "textAlign": "CENTER",
+          "separator": {
+            "value": "LINE_BREAK",
+            "category": "BEHIND"
+          }
+        },
+        "styleValue": {
+          "fontFamily": "Tahoma",
+          "fontSize": 12,
+          "color": "000000",
+          "bold": true,
+          "italic": false,
+          "textAlign": "CENTER",
+          "separator": {
+            "value": "LINE_BREAK",
+            "category": "BEHIND"
+        }
+      }
+      }
+    ],
+    "header": {
+      "logo": "./inputResources/TecFox_Logo.png"
+    },
+    "footer": {
+      "leftSection": [
+        "TecFox GmbH",
+        "Hohetorwall 12",
+        "38128 Braunschweig"
+      ],
+      "middleSection": [
+        "Geschäftsführung",
+        "Birgit Prokopp, AnhalOsamn",
+        "Handelsregister: Braunschweig HRB 209380",
+        "USt-IdNr. DE344726378"
+      ],
+      "rightSection": [
+        "Volksbank Braunschweig Wolfsburg",
+        "IBAN: DE45 2699 1066 1268 4640 00",
+        "BIC: GENODEF1WOB"
+      ],
+      "style": {
+        "fontFamily": "Tahoma",
+        "fontSize": 9,
+        "color": "000000",
+        "bold": false,
+        "italic": false,
+        "textAlign": "LEFT",
+        "separator": {
+          "value": "TAB",
+          "category": "BEHIND"
+        }
+      }
+    },
+    "style": {
+      "fontFamily": "Tahoma",
+      "fontSize": 22,
+      "color": "000000",
+      "bold": true,
+      "italic": false,
+      "textAlign": "CENTER",
+      "separator": {
+        "value": "LINE_BREAK",
+        "category": "BEHIND"
+      }
+    }
+  }

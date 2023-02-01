@@ -1,0 +1,140 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.2'
+	id 'io.spring.dependency-management' version '1.1.0'	
+	id 'jacoco'
+    
+    // publish to sonatype
+	id 'java-library'
+	id 'maven-publish'
+	id 'signing'
+	id 'io.github.gradle-nexus.publish-plugin' version '1.1.0'
+}
+
+group = 'eu.tecfox'
+version = '0.0.1'
+sourceCompatibility = '17'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+	maven { url 'https://artifactory-oss.prod.netflix.net/artifactory/maven-oss-candidates' }
+	maven { url 'https://repo.spring.io/milestone' }
+}
+
+ext {
+	set('springCloudVersion', "2022.0.0-RC2")
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-validation:3.0.0'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+	implementation 'io.springfox:springfox-boot-starter:3.0.0'
+
+	// docxBuilder
+	implementation 'com.documents4j:documents4j-transformer-msoffice-word:1.1.10'
+	implementation 'com.documents4j:documents4j-local:1.1.10'
+	implementation 'fr.opensagres.xdocreport:fr.opensagres.poi.xwpf.converter.pdf:2.0.4'
+	implementation 'org.apache.poi:poi-ooxml-lite:5.2.3'
+
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.testcontainers:mongodb:1.17.6'
+	testImplementation 'org.testcontainers:junit-jupiter:1.17.6'
+}
+
+// java {
+//     withJavadocJar()
+//     withSourcesJar()
+// }
+
+nexusPublishing {
+    repositories {
+        sonatype {  //only for users registered in Sonatype after 24 Feb 2021
+            nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
+            snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
+            username='flobbe10'
+            password='Formatter-service:0.0.1'
+        }
+    }
+}
+
+publishing {
+    publications {
+        // publish to sonatype
+        mavenJava(MavenPublication) {
+            from(components.java)
+            pom {
+                name = 'formatter-service'
+                description = 'Formatter service to convert a specific .json file into a .docx and/or .pdf document.'
+                url = 'https://bitbucket.org/flobbe13/formatter-service/src/'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'flobbe13'
+                        name = 'Florin Schikarski'
+                    }
+                }
+                scm {
+                    url = 'https://bitbucket.org/flobbe13/formatter-service/src/'
+                    connection = 'scm:git://bitbucket.org/flobbe13/formatter-service/src.git'
+                    developerConnection = 'scm:git://bitbucket.org/flobbe13/formatter-service/src.git'
+                }
+            }
+        }
+
+        // publish to nexus repo
+        // maven(MavenPublication) {
+        //     artifact("build/libs/formatter-service-$version"+".jar") {
+        //         extension 'jar'
+        //     }
+        // }
+    }
+    // repositories {
+    //     maven {
+    //         name 'nexus'
+    //         url "http://127.0.0.1:8081/repository/maven-releases/"
+    //         credentials {
+    //             username project.repoUser
+    //             password project.repoPassword
+    //         }
+	// 	}
+    // }
+}
+
+signing {
+    sign publishing.publications.mavenJava
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
+
+tasks.named('test') {
+	environment "TESTCONTAINERS_RYUK_DISABLED", "true"
+	useJUnitPlatform()
+	finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+	dependsOn test
+}
+
+jacoco {
+	toolVersion = "0.8.8"
+}
