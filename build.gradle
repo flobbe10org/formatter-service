@@ -11,7 +11,7 @@ plugins {
 	id 'io.github.gradle-nexus.publish-plugin' version '1.1.0'
 }
 
-group = 'eu.tecfox'
+group = 'io.github.flobbe10-organization'
 version = '0.0.1'
 sourceCompatibility = '17'
 
@@ -61,8 +61,6 @@ nexusPublishing {
         sonatype {  //only for users registered in Sonatype after 24 Feb 2021
             nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
             snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
-            username='flobbe10'
-            password='Formatter-service:0.0.1'
         }
     }
 }
@@ -75,7 +73,7 @@ publishing {
             pom {
                 name = 'formatter-service'
                 description = 'Formatter service to convert a specific .json file into a .docx and/or .pdf document.'
-                url = 'https://bitbucket.org/flobbe13/formatter-service/src/'
+                url = 'https://github.com/flobbe10-organization/formatter-service'
                 licenses {
                     license {
                         name = 'The Apache License, Version 2.0'
@@ -84,14 +82,14 @@ publishing {
                 }
                 developers {
                     developer {
-                        id = 'flobbe13'
+                        id = 'flobbe10'
                         name = 'Florin Schikarski'
                     }
                 }
                 scm {
-                    url = 'https://bitbucket.org/flobbe13/formatter-service/src/'
-                    connection = 'scm:git://bitbucket.org/flobbe13/formatter-service/src.git'
-                    developerConnection = 'scm:git://bitbucket.org/flobbe13/formatter-service/src.git'
+                    url = 'https://github.com/flobbe10-organization/formatter-service'
+                    connection = 'scm:git://github.com/flobbe10-organization/formatter-service.git'
+                    developerConnection = 'scm:git://github.com/flobbe10-organization/formatter-service.git'
                 }
             }
         }
@@ -108,8 +106,8 @@ publishing {
     //         name 'nexus'
     //         url "http://127.0.0.1:8081/repository/maven-releases/"
     //         credentials {
-    //             username project.repoUser
-    //             password project.repoPassword
+    //             username project.nexusUsername
+    //             password project.nexusPassword
     //         }
 	// 	}
     // }
