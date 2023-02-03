@@ -16,20 +16,21 @@
 
 package eu.tecfox.formatterservice.template;
 
+import eu.tecfox.formatterservice.FormatterServiceApplication;
+import eu.tecfox.formatterservice.template.TemplateRepository;
+import eu.tecfox.formatterservice.template.TemplateService;
+import eu.tecfox.formatterservice.template.TemplateServiceImpl;
+import eu.tecfox.formatterservice.template.models.Template;
 import eu.tecfox.formatterservice.template.models.section.elements.NestedElement;
 import eu.tecfox.formatterservice.template.models.section.elements.SectionElement;
 import eu.tecfox.formatterservice.testdata.TestDataGenerator;
+
 import java.io.IOException;
 import java.util.Optional;
-
-import eu.tecfox.formatterservice.FormatterserviceApplication;
-import eu.tecfox.formatterservice.template.models.Template;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.data.domain.AuditorAware;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
@@ -43,12 +44,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @Testcontainers
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = {FormatterserviceApplication.class, TemplateRepository.class, TemplateServiceImpl.class})
+@ContextConfiguration(classes = {FormatterServiceApplication.class, TemplateRepository.class, TemplateServiceImpl.class})
 @TestPropertySource(properties = {"spring.cloud.discovery.enabled=false"})
 class TemplateServiceImplTest {
 
-    @MockBean(name = "auditorProvider")
-    AuditorAware<?> auditorProvider;
     @Container
     static MongoDBContainer mongoDBContainer = new MongoDBContainer("mongo:4.4.2");
     private final TemplateService templateService;

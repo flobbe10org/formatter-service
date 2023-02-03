@@ -16,8 +16,6 @@
 
 package eu.tecfox.formatterservice.testdata;
 
-import eu.tecfox.formatterservice.template.models.section.elements.NestedElement;
-import eu.tecfox.formatterservice.template.models.section.elements.NestedValue;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -29,6 +27,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import eu.tecfox.formatterservice.formatter.ResourceHandlerTest;
 import eu.tecfox.formatterservice.template.models.Template;
 import eu.tecfox.formatterservice.template.models.section.Section;
+import eu.tecfox.formatterservice.template.models.section.elements.NestedElement;
+import eu.tecfox.formatterservice.template.models.section.elements.NestedValue;
 import eu.tecfox.formatterservice.template.models.section.elements.SectionElement;
 import eu.tecfox.formatterservice.template.models.section.elements.StringElement;
 
@@ -42,7 +42,7 @@ public class TestDataGenerator {
         return mapper.readValue(json, Template.class);
     }
 
-    public static Template generateNewValidTemplate() throws IOException {
+    public static Template generateValidNewTemplate() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.readTree(
             Paths.get(ResourceHandlerTest.NEW_TEST_TEMPLATE).toFile()).toString();

@@ -15,19 +15,14 @@
  */
 package eu.tecfox.formatterservice.formatter;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static eu.tecfox.formatterservice.formatter.ResourceHandler.INPUT_RESOURCE_PATH;
 import static eu.tecfox.formatterservice.formatter.ResourceHandler.OUTPUT_RESOURCE_PATH;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
-
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.io.IOException;
-import java.util.Optional;
-
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -35,14 +30,15 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
+import eu.tecfox.formatterservice.formatter.FormatterController;
 import eu.tecfox.formatterservice.formatter.ResourceHandler;
+import eu.tecfox.formatterservice.template.models.Template;
+import eu.tecfox.formatterservice.testdata.TestDataGenerator;
 
 
-// TODO: rewrite tests
 /**
  * Test class for {@link FormatterController}.
  * 
@@ -51,70 +47,68 @@ import eu.tecfox.formatterservice.formatter.ResourceHandler;
  */
 @WebMvcTest(FormatterController.class)
 @TestInstance(Lifecycle.PER_CLASS)
+// TODO: rewrite every test
 public class FormatterControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
+    private Template template;
+
+    
     @BeforeAll
     void setup() throws IOException { 
         
         // create resource folders
         ResourceHandler.createDirs(INPUT_RESOURCE_PATH, OUTPUT_RESOURCE_PATH);
+
+        // set template
+        this.template = TestDataGenerator.generateValidTemplate();
     }
 
 
     // @Test
-    // void formatAndDownload_asDocx_shouldBeOk() throws Exception {
+    void formatAndDownload_asDocx_shouldBeOk() throws Exception {
 
-    //     // mock profileService
-    //     when(profileService.findByUserId(any())).thenReturn(Optional.of(profile));
-
-    //     // send request
-    //     this.mockMvc.perform(get("/api/formatter/someId?pdf=false"))
-    //                         .andExpect(status().isOk())
-    //                         .andExpect(content().contentType(MediaType.APPLICATION_OCTET_STREAM_VALUE));
-    // }
+        // send request
+        this.mockMvc.perform(get("/api/formatter/pdf=false"))
+                            .andExpect(status().isOk())
+                            .andExpect(content().contentType(MediaType.APPLICATION_OCTET_STREAM_VALUE));
+    }
 
 
     // @Test
-    // void formatAndDownload_asPdf_shouldBeOk() throws Exception {
+    void formatAndDownload_asPdf_shouldBeOk() throws Exception {
 
-    //     // mock profileService
-    //     when(profileService.findByUserId(any())).thenReturn(Optional.of(profile));
-
-    //     // send request
-    //     this.mockMvc.perform(get("/api/formatter/someId?pdf=true"))
-    //                         .andExpect(status().isOk())
-    //                         .andExpect(content().contentType(MediaType.APPLICATION_OCTET_STREAM_VALUE));
-    // }
+        // send request
+        this.mockMvc.perform(get("/api/formatter/pdf=true"))
+                            .andExpect(status().isOk())
+                            .andExpect(content().contentType(MediaType.APPLICATION_OCTET_STREAM_VALUE));
+    }
 
 
     // @Test
-    // void formatAndDownload_shouldBeNotFoundIfUserHasNoProfile() throws Exception {
+    void formatAndDownload_shouldBeNotFoundIfUserHasNoProfile() throws Exception {
 
-    //     // fake user id
-    //     String fakeUserId = "abcd";
-
-    //     // send request
-    //     this.mockMvc.perform(get("/api/formatter/" + fakeUserId + "?pdf=false"))
-    //                         .andExpect(status().isNotFound());
-    // }
+        // send request
+        this.mockMvc.perform(get("/api/formatter/pdf=false"))
+                            .andExpect(status().isNotFound());
+    }
 
 
     // @Test
-    // void deleteFiles_shouldBeOk() throws Exception {
+    void deleteFiles_shouldBeOk() throws Exception {
 
-    //     // send request
-    //     this.mockMvc.perform(delete("/api/formatter/deleteFiles"))
-    //                         .andExpect(status().isOk());
-    // }
+        // send request
+        this.mockMvc.perform(delete("/api/formatter/deleteFiles"))
+                            .andExpect(status().isOk());
+    }
 
 
-    // @AfterAll
-    // void cleanUp() {
+    @AfterAll
+    void cleanUp() {
 
-    //     // delete all test files
-    //     ResourceHandler.clearDirectory(OUTPUT_RESOURCE_PATH);
-    // }
+        // delete all test files
+        ResourceHandler.clearDirectory(OUTPUT_RESOURCE_PATH);
+    }
 }

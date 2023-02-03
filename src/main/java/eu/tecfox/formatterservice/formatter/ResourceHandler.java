@@ -22,7 +22,7 @@ public class ResourceHandler {
 
     public static final String TECFOX_LOGO_PATH = "./inputResources/TecFox_Logo.png";
 
-    public static final String PROFILE_TEMPLATE = "src/main/java/eu/tecfox/profileconfig/template/profileTemplate.json";
+    public static final String PROFILE_TEMPLATE = "src/main/java/eu/tecfox/formatterservice/template/profileTemplate.json";
 
     public static final String DOCX_FORMATTED_BY_API = "Profile-" + UUID.randomUUID() + ".docx";
 

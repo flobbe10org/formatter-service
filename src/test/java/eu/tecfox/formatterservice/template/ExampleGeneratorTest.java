@@ -16,18 +16,18 @@
 
 package eu.tecfox.formatterservice.template;
 
-import eu.tecfox.formatterservice.testdata.TestDataGenerator;
-import java.io.IOException;
-import java.time.LocalDate;
-
+import eu.tecfox.formatterservice.template.ExampleGenerator;
 import eu.tecfox.formatterservice.template.models.ExampleValues;
 import eu.tecfox.formatterservice.template.models.Template;
-
 import eu.tecfox.formatterservice.template.models.section.Section;
 import eu.tecfox.formatterservice.template.models.section.elements.DateElement;
 import eu.tecfox.formatterservice.template.models.section.elements.SectionElement;
 import eu.tecfox.formatterservice.template.models.section.elements.StringElement;
 import eu.tecfox.formatterservice.template.models.section.elements.StringListElement;
+import eu.tecfox.formatterservice.testdata.TestDataGenerator;
+
+import java.io.IOException;
+import java.time.LocalDate;
 
 import org.junit.jupiter.api.Test;
 

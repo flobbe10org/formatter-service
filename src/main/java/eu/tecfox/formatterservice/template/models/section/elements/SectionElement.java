@@ -21,7 +21,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import eu.tecfox.formatterservice.template.Patchable;
+
+import eu.tecfox.formatterservice.template.models.Patchable;
 import eu.tecfox.formatterservice.template.models.style.Style;
 import lombok.Getter;
 import lombok.Setter;

@@ -16,7 +16,6 @@
 
 package eu.tecfox.formatterservice.exception;
 
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -65,10 +64,6 @@ public class BindingResultErrorFormatter {
         throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         List<String> errors = getErrorMessages(bindingResult);
-        ObjectNode objectNode = mapper.createObjectNode();
-        objectNode.put("type", "validationError");
-        objectNode.put("errors", errors.toString());
-
-        return mapper.writeValueAsString(objectNode);
+        return mapper.writeValueAsString(errors);
     }
 }

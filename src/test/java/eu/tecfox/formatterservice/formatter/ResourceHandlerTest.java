@@ -14,6 +14,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 
+import eu.tecfox.formatterservice.formatter.ResourceHandler;
+
 
 /**
  * Class providing test resources and methods for test classes.
@@ -24,13 +26,11 @@ import org.junit.jupiter.api.TestInstance.Lifecycle;
 @TestInstance(Lifecycle.PER_CLASS)
 public class ResourceHandlerTest {
 
-    public static final String TEST_TEMPLATE = "./src/test/java/eu/tecfox/profileconfig/testdata/testTemplate.json";
+    public static final String TEST_TEMPLATE = "./src/test/java/eu/tecfox/formatterservice/testdata/testTemplate.json";
 
-    public static final String NEW_TEST_TEMPLATE = "./src/test/java/eu/tecfox/profileconfig/testdata/newTestTemplate.json";
+    public static final String NEW_TEST_TEMPLATE = "./src/test/java/eu/tecfox/formatterservice/testdata/newTestTemplate.json";
 
-    public static final String TEST_PROFILE = "./src/test/java/eu/tecfox/profileconfig/testdata/testProfile.json";
-    
-    public static final String CONTRACT_TEMPLATE = "./src/test/java/eu/tecfox/profileconfig/testdata/contractTemplate.json";
+    public static final String CONTRACT_TEMPLATE = "./src/test/java/eu/tecfox/formatterservice/testdata/contractTemplate.json";
 
     public static final String TEST_DOCX = "TestDocx.docx";
 

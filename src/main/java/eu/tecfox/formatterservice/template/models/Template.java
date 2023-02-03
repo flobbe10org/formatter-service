@@ -26,7 +26,6 @@ import eu.tecfox.formatterservice.template.models.elements.Header;
 import eu.tecfox.formatterservice.template.models.metadata.AuditMetaData;
 import eu.tecfox.formatterservice.template.models.section.Section;
 import eu.tecfox.formatterservice.template.models.style.Style;
-
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -66,11 +65,4 @@ public class Template extends AuditMetaData {
     private Header header;
 
     private Footer footer;
-
-    public void clearMetaData() {
-        this.setLastModifiedDate(null);
-        this.setModifiedByUser(null);
-        this.setCreatedDate(null);
-        this.setLastModifiedDate(null);
-    }
 }

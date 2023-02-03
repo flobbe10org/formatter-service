@@ -35,8 +35,8 @@ import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 
+import eu.tecfox.formatterservice.formatter.Formatter;
 import eu.tecfox.formatterservice.formatter.ResourceHandler;
-
 import eu.tecfox.formatterservice.template.models.Template;
 import eu.tecfox.formatterservice.testdata.TestDataGenerator;
 
@@ -67,7 +67,7 @@ public class FormatterTest {
 
         // create template
         // this.template = TestDataGenerator.generateValidContract();
-        this.template = TestDataGenerator.generateValidTemplate();
+        this.template = TestDataGenerator.generateValidNewTemplate();
 
         // create formatter
         this.formatter = new Formatter(template);

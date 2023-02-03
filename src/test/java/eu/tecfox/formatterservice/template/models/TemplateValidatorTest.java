@@ -16,14 +16,17 @@
 
 package eu.tecfox.formatterservice.template.models;
 
+import eu.tecfox.formatterservice.template.models.Template;
+import eu.tecfox.formatterservice.template.models.ValidTemplate;
+import eu.tecfox.formatterservice.template.models.section.elements.NestedElement;
+import eu.tecfox.formatterservice.template.models.section.elements.StringElement;
+import eu.tecfox.formatterservice.template.models.section.elements.StringListElement;
 import eu.tecfox.formatterservice.testdata.TestDataGenerator;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Set;
 
-import eu.tecfox.formatterservice.template.models.section.elements.NestedElement;
-import eu.tecfox.formatterservice.template.models.section.elements.StringElement;
-import eu.tecfox.formatterservice.template.models.section.elements.StringListElement;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;

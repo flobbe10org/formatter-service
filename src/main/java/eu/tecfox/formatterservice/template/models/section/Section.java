@@ -23,7 +23,8 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import eu.tecfox.formatterservice.template.Patchable;
+
+import eu.tecfox.formatterservice.template.models.Patchable;
 import eu.tecfox.formatterservice.template.models.ValidTemplate;
 import eu.tecfox.formatterservice.template.models.section.elements.SectionElement;
 import eu.tecfox.formatterservice.template.models.style.Style;

@@ -28,6 +28,8 @@ import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import eu.tecfox.formatterservice.formatter.ResourceHandler;
+import eu.tecfox.formatterservice.formatter.SectionFormatter;
 import eu.tecfox.formatterservice.template.models.Template;
 import eu.tecfox.formatterservice.testdata.TestDataGenerator;
 
@@ -57,7 +59,7 @@ public class SectionFormatterTest {
         this.document = new XWPFDocument();
         
         // set mock data
-        this.template = TestDataGenerator.generateNewValidTemplate();
+        this.template = TestDataGenerator.generateValidNewTemplate();
 
         // create sectionFormatter
         this.sectionFormatter = new SectionFormatter(template, document);

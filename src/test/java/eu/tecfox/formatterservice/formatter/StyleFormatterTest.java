@@ -30,6 +30,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.STTabJc;
 
+import eu.tecfox.formatterservice.formatter.ResourceHandler;
+import eu.tecfox.formatterservice.formatter.StyleFormatter;
 import eu.tecfox.formatterservice.template.models.section.elements.SectionElement;
 import eu.tecfox.formatterservice.template.models.section.elements.StringElement;
 import eu.tecfox.formatterservice.template.models.section.elements.separator.Separator;

@@ -19,7 +19,6 @@ package eu.tecfox.formatterservice.template.models.section.elements;
 import java.util.Objects;
 
 import eu.tecfox.formatterservice.template.models.ExampleValues;
-
 import lombok.Data;
 
 /**

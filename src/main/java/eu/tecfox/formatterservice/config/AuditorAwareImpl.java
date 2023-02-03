@@ -14,28 +14,26 @@
  * limitations under the License.
  */
 
-package eu.tecfox.formatterservice.template;
+package eu.tecfox.formatterservice.config;
+
+import java.util.Optional;
+
+import org.springframework.data.domain.AuditorAware;
 
 /**
- * Interface that indicates that an entity is patchable.
+ * Class to make mongo auditing aware of the current user.
+ *
+ * <p>
+ *     Used to automatically fill @CreatedBy and @LastModifiedBy.
+ * </p>
  *
  * @author Valentin Laucht
  * @version 1.0
  */
-public interface Patchable <T> {
-
-    /**
-     * Method to copy all values of the entityToMerge into
-     * the entity that implements this interface.
-     *
-     * @param entityToMerge the entity that holds the relevant data
-     */
-    void patch(final T entityToMerge);
-
-    /**
-     * Provides a unique identifier that can identify this entity.
-     *
-     * @return a unique identifier for the entity
-     */
-    Object getIdentifier();
+public class AuditorAwareImpl implements AuditorAware<String> {
+    @Override
+    public Optional<String> getCurrentAuditor() {
+        // TODO implement once authentication exists
+        return Optional.empty();
+    }
 }

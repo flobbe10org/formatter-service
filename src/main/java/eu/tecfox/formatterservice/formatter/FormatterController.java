@@ -21,7 +21,6 @@ import static eu.tecfox.formatterservice.formatter.ResourceHandler.PDF_FORMATTED
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.file.Paths;
 
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
@@ -31,12 +30,10 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import eu.tecfox.formatterservice.template.models.Template;
 import io.swagger.annotations.Api;
@@ -56,25 +53,17 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @RequestMapping("/api/formatter")
 @Api(tags = {"Formatter Controller"})
 @Tag(name = "Formatter Controller", description = "All endpoints related to the Formatter object.")
+// TODO: update swagger
 public class FormatterController {
-
-
-    @GetMapping(value = "/{userId}")
+    
+    @GetMapping
     @ApiOperation(value = "Format and download a user's profile as docx or pdf.")
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "The formatted profile as docx or pdf."),
         @ApiResponse(code = 404, message = "The user with id <userId> has no profile yet."),
     })
-    public ResponseEntity<Resource> formatAndDownload(@PathVariable String userId, @RequestParam boolean pdf) throws IOException {
-
-        // get profile from db
-        // Profile profile = profileService.findByUserId(userId).orElseThrow(() ->
-        //     new ApiRequestException("The user with id " + userId + " has no profile yet.", HttpStatus.NOT_FOUND));
-
-        ObjectMapper mapper = new ObjectMapper();
-        String json = mapper.readTree(
-            Paths.get("./src/test/java/eu/tecfox/profileconfig/testdata/newTestTemplate.json").toFile()).toString();
-        Template template = mapper.readValue(json, Template.class);
+    // TODO: does this endopint make sense?
+    public ResponseEntity<Resource> formatAndDownload(@RequestBody Template template, @RequestParam boolean pdf) throws IOException {
 
         // format profile
         Formatter formatter = new Formatter(template);
@@ -96,7 +85,7 @@ public class FormatterController {
             // filePath = pdfPath;
             // TODO: delete the line below and use the line above when DocxConverter is fixed
             filePath = docxPath;
-            
+
         // download as docx
         } else {          
             // set download path

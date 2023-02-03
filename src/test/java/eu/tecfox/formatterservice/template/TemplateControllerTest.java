@@ -16,11 +16,14 @@
 
 package eu.tecfox.formatterservice.template;
 
+import eu.tecfox.formatterservice.template.TemplateController;
+import eu.tecfox.formatterservice.template.TemplateService;
+import eu.tecfox.formatterservice.template.models.Template;
 import eu.tecfox.formatterservice.testdata.TestDataGenerator;
+
 import java.util.Optional;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import eu.tecfox.formatterservice.template.models.Template;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

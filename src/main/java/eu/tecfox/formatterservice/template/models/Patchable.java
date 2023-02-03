@@ -14,19 +14,28 @@
  * limitations under the License.
  */
 
-package eu.tecfox.formatterservice.template;
-
-import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.stereotype.Repository;
-
-import eu.tecfox.formatterservice.template.models.Template;
+package eu.tecfox.formatterservice.template.models;
 
 /**
- * Repository that holds all queries related to templates.
+ * Interface that indicates that an entity is patchable.
  *
  * @author Valentin Laucht
  * @version 1.0
  */
-@Repository
-public interface TemplateRepository extends MongoRepository<Template, String> {
+public interface Patchable <T> {
+
+    /**
+     * Method to copy all values of the entityToMerge into
+     * the entity that implements this interface.
+     *
+     * @param entityToMerge the entity that holds the relevant data
+     */
+    void patch(final T entityToMerge);
+
+    /**
+     * Provides a unique identifier that can identify this entity.
+     *
+     * @return a unique identifier for the entity
+     */
+    Object getIdentifier();
 }

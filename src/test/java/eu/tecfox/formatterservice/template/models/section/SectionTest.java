@@ -18,6 +18,8 @@ package eu.tecfox.formatterservice.template.models.section;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import eu.tecfox.formatterservice.template.models.section.Section;
 import eu.tecfox.formatterservice.template.models.section.elements.NestedElement;
 import eu.tecfox.formatterservice.template.models.section.elements.StringElement;
 import eu.tecfox.formatterservice.testdata.TestDataGenerator;
