@@ -66,12 +66,8 @@ public class Section implements Patchable<Section> {
         if (o == this) {
             return true;
         }
-
-        Section s;
-        if (!(o instanceof Section)) {
+        if (!(o instanceof Section s)) {
             return false;
-        } else {
-            s = (Section) o;
         }
         if (s.getIdentifier() == null || this.getIdentifier() == null) {
             return false;
