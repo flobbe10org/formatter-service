@@ -1,7 +1,5 @@
 before_install:
    - sdk update
-   - sdk install java 17.0.5-albba  
-   - sdk use java 17.0.5-albba  
-jdk:
-   - openjdk17
+   - sdk install java 17.0.5-ms
+   - sdk use java 17.0.5-ms
    - java -version
