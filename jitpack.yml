@@ -4,4 +4,5 @@ before_install:
    - sdk use java 17.0.5-tem
 
 install:
+   - gradle install
    - gradle build -DskipTests
