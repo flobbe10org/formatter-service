@@ -1,2 +1,5 @@
+before_install: 
+   - sdk update
+
 jdk: 
    - openjdk17
