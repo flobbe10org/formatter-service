@@ -1,6 +1,2 @@
 jdk: 
    - openjdk17
-
-install:
-   - echo "Runnig gradle clean install"
-   - gradle clean install -xtest
