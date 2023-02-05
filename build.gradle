@@ -3,11 +3,13 @@ plugins {
 	id 'org.springframework.boot' version '3.0.2'
 	id 'io.spring.dependency-management' version '1.1.0'	
 	id 'jacoco'
+	id 'maven-publish'
 }
 
 group = 'eu.tecfox' 
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
+targetCompatibility = '17'
 
 configurations {
 	compileOnly {
@@ -19,6 +21,7 @@ repositories {
 	mavenCentral()
 	maven { url 'https://artifactory-oss.prod.netflix.net/artifactory/maven-oss-candidates' }
 	maven { url 'https://repo.spring.io/milestone' }
+	maven { url 'https://jitpack.io' }
 }
 
 ext {
@@ -43,6 +46,19 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.testcontainers:mongodb:1.17.6'
 	testImplementation 'org.testcontainers:junit-jupiter:1.17.6'
+}
+
+java {
+	withSourcesJar()
+	withJavadocJar()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+			from components.java
+        }
+    }
 }
 
 dependencyManagement {
